@@ -29,7 +29,7 @@ func print_info(player):
 	if player == "user":
 		avatar.texture = load("res://sprites/sprite/clerk.png")
 		score = get_node("/root/Global").score_user
-		label.text += "Играет пользователь\n"
+		label.text += "Играет клерк\n"
 		avatar.position = Vector2(-150, 10)
 		avatar.scale = Vector2(0.6, 0.6);
 	elif player == "hacker":
