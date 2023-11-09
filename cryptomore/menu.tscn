@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq1rgwnes74yu"]
+
+[ext_resource type="Script" path="res://user_button.gd" id="1_5kb1q"]
+[ext_resource type="Script" path="res://hacker_button.gd" id="2_5j8ik"]
+[ext_resource type="Script" path="res://quit_button.gd" id="3_5veer"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.537255, 1, 1, 1)
+
+[node name="user_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 160.0
+offset_right = 1240.0
+offset_bottom = 324.0
+script = ExtResource("1_5kb1q")
+
+[node name="hacker_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 460.0
+offset_right = 1240.0
+offset_bottom = 624.0
+script = ExtResource("2_5j8ik")
+
+[node name="quit_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 760.0
+offset_right = 1240.0
+offset_bottom = 924.0
+script = ExtResource("3_5veer")
+
+[connection signal="pressed" from="user_button" to="user_button" method="_on_pressed"]
+[connection signal="pressed" from="hacker_button" to="hacker_button" method="_on_pressed"]
+[connection signal="pressed" from="quit_button" to="quit_button" method="_on_pressed"]

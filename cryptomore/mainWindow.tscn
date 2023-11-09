@@ -1,0 +1,110 @@
+[gd_scene load_steps=17 format=3 uid="uid://bdqfwa70io83"]
+
+[ext_resource type="Script" path="res://mainWindow.gd" id="1_l1a22"]
+[ext_resource type="Texture2D" uid="uid://gerkic1jv3t5" path="res://sprites/sprite/background.png" id="1_r836l"]
+[ext_resource type="Texture2D" uid="uid://caufxxsaq8h3j" path="res://sprites/sprite/toolbar.png" id="3_mmjw0"]
+[ext_resource type="Script" path="res://background.gd" id="3_wus3v"]
+[ext_resource type="Script" path="res://toolbar.gd" id="5_601i6"]
+[ext_resource type="Texture2D" uid="uid://cmukxv704p6bf" path="res://sprites/sprite/dockbar1.png" id="5_fuhjc"]
+[ext_resource type="Texture2D" uid="uid://crwqk7e32k36s" path="res://sprites/sprite/iconexp.png" id="6_6o8xh"]
+[ext_resource type="Texture2D" uid="uid://k2klks6eo0r7" path="res://sprites/sprite/noteinframe1.png" id="7_45trf"]
+[ext_resource type="Script" path="res://taskbar.gd" id="7_px6sx"]
+[ext_resource type="Script" path="res://date.gd" id="9_7cleu"]
+[ext_resource type="Script" path="res://startbutton.gd" id="13_u6k52"]
+[ext_resource type="Texture2D" uid="uid://urve38cuj4xn" path="res://sprites/demospr/test icon.png" id="14_3w0dd"]
+[ext_resource type="Script" path="res://game_info.gd" id="14_r4css"]
+[ext_resource type="Texture2D" uid="uid://dvnbr4rqy5ymx" path="res://sprites/sprite/framebutton/-.png" id="32_ckm2k"]
+[ext_resource type="Texture2D" uid="uid://b11cig6vknxo7" path="res://sprites/sprite/framebutton/sqr.png" id="33_odvvj"]
+[ext_resource type="Texture2D" uid="uid://tve1tqmw12j2" path="res://sprites/sprite/framebutton/x.png" id="34_mmbbs"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l1a22")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.35, 0.352)
+texture = ExtResource("1_r836l")
+centered = false
+script = ExtResource("3_wus3v")
+
+[node name="inventory" type="Sprite2D" parent="."]
+position = Vector2(417, 879.5)
+scale = Vector2(1.5, 1.395)
+texture = ExtResource("3_mmjw0")
+script = ExtResource("5_601i6")
+
+[node name="dockbar" type="Sprite2D" parent="."]
+position = Vector2(960, 1040)
+scale = Vector2(1, 0.944)
+texture = ExtResource("5_fuhjc")
+
+[node name="date" type="RichTextLabel" parent="."]
+offset_left = 1821.0
+offset_top = 1022.0
+offset_right = 1887.0
+offset_bottom = 1043.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+script = ExtResource("9_7cleu")
+
+[node name="titlewindow" type="Sprite2D" parent="."]
+
+[node name="taskbar" type="Sprite2D" parent="."]
+position = Vector2(1734, 183)
+texture = ExtResource("7_45trf")
+script = ExtResource("7_px6sx")
+
+[node name="startbutton" type="Button" parent="."]
+offset_left = 28.0
+offset_top = 1018.0
+offset_right = 239.0
+offset_bottom = 1057.0
+flat = true
+script = ExtResource("13_u6k52")
+
+[node name="game_info" type="Sprite2D" parent="."]
+position = Vector2(1717, 932)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_mmjw0")
+script = ExtResource("14_r4css")
+
+[node name="Iconexp" type="Sprite2D" parent="."]
+position = Vector2(280, 1041)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_6o8xh")
+
+[node name="TestIcon" type="Sprite2D" parent="."]
+position = Vector2(362, 1041)
+texture = ExtResource("14_3w0dd")
+
+[node name="-" type="Sprite2D" parent="."]
+position = Vector2(773, 754)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("32_ckm2k")
+
+[node name="Sqr" type="Sprite2D" parent="."]
+position = Vector2(793, 754)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("33_odvvj")
+
+[node name="X" type="Sprite2D" parent="."]
+position = Vector2(813, 754)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("34_mmbbs")
+
+[node name="-2" type="Sprite2D" parent="."]
+position = Vector2(1874, 869)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("32_ckm2k")
+
+[node name="Sqr2" type="Sprite2D" parent="."]
+position = Vector2(1888, 869)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("33_odvvj")
+
+[node name="X2" type="Sprite2D" parent="."]
+position = Vector2(1902, 869)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("34_mmbbs")
+
+[connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]
